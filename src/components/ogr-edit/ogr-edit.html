@@ -1,0 +1,74 @@
+<div>
+  {{$ctrl.ogrenci.Id}}
+  {{$ctrl.ogrenci.Ad}}
+  {{$ctrl.ogrenci.Soyad}}
+  {{$ctrl.ogrenci.Tc}}
+</div>
+<div>
+  <form name="form">
+
+    <label>
+      Ad:
+      <input type="text" name="Ad" ng-model="$ctrl.ogrenci.Ad" ng-maxlength="10" ng-pattern="/^[a-zA-Z]*$/" required>
+      <div ng-messages="form.Ad.$error" ng-show="form.Ad.$touched" role="alert">
+        <div ng-message="required">
+          <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+          Ad alanı boş olamaz
+        </div>
+        <div ng-message="pattern">
+          <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+          Ad kurallara uygun şekilde girilmedi
+        </div>
+      </div>
+    </label>
+    <br />
+    <label>
+      Last name:
+      <input type="text" name="Soyad" ng-model="$ctrl.ogrenci.Soyad" ng-maxlength="10" ng-pattern="/^[a-zA-Z]*$/"
+        required>
+      <div ng-messages="form.Soyad.$error" ng-show="form.Soyad.$touched" role="alert">
+        <div ng-message="required">
+          <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+          Soyad alanı boş olamaz
+        </div>
+        <div ng-message="pattern">
+          <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+          Soyad kurallara uygun şekilde girilmedi
+        </div>
+      </div>
+
+    </label>
+    <br />
+    <label>
+      Tc:
+      <input type="text" name="Tc" ng-model="$ctrl.ogrenci.Tc" ng-maxlength="11" ng-minlength="11" required>
+      <div ng-messages="form.Tc.$error" ng-show="form.Tc.$touched" role="alert">
+        <div ng-message="required">
+          <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+          Tc alanı boş olamaz
+        </div>
+        <div ng-message="ng-minlength">
+          <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+          Tc kurallara uygun şekilde girilmedi
+        </div>
+      </div>
+    </label>
+    <div>
+      <button type="submit" ng-click="$ctrl.goUpdate()" class="btn btn-primary">
+        <i class="fa fa-angle-double-left" aria-hidden="true"></i> Düzenle
+
+      </button>
+
+      <button id='olustur' type="submit" ng-click="$ctrl.goAdd()" ng-disabled="!form.$valid" class="btn btn-primary">
+        <i class="fa fa-angle-double-left" aria-hidden="true"></i> Ekle
+
+      </button>
+    </div>
+  </form>
+
+</div>
+
+<button type="submit" ng-click="$ctrl.goList()" class="btn btn-primary">
+  <i class="fa fa-angle-double-left" aria-hidden="true"></i> Listeye
+  Dön
+</button>
