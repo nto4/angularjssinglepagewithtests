@@ -2,6 +2,7 @@
 import "angular";
 import "angular-mocks";
 import "./../../index.js";
+import { timeout } from "q";
 
 describe('Ogr List html', () => {
     let $compile;

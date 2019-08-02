@@ -1,4 +1,3 @@
-
 <div class="container">
   <div class="panel panel-default">
     <div class="panel-heading">
@@ -10,24 +9,24 @@
         </div>
       </div>
       <label for="">
-        Search: <input id="Ara" class="form-control" placeholder="Search" style="  border: none;
+        Search: <input id="Ara" class="form-control" placeholder="Search" style="  border: none;  
          border-bottom: 2px solid red;" ng-model="$ctrl.query " />
       </label>
       <br>
       <button type="submit" class="btn btn-primary" ng-click=orderByPlaceVariable="Id">
-          <span class="glyphicon glyphicon-sort-by-alphabet"></span>
+        <span class="glyphicon glyphicon-sort-by-alphabet"></span>
         <i class="fa fa-angle-double-left" aria-hidden="true"></i> ShortById
       </button>
       <button type="submit" class="btn btn-primary" ng-click=orderByPlaceVariable="Ad">
-          <span class="glyphicon glyphicon-sort-by-alphabet"></span>
+        <span class="glyphicon glyphicon-sort-by-alphabet"></span>
         <i class="fa fa-angle-double-left" aria-hidden="true"></i> shortbyName
       </button>
       <button type="submit" class="btn btn-primary" ng-click=orderByPlaceVariable="Soyad">
-          <span class="glyphicon glyphicon-sort-by-alphabet"></span>
+        <span class="glyphicon glyphicon-sort-by-alphabet"></span>
         <i class="fa fa-angle-double-left" aria-hidden="true"></i> shortbySurname
       </button>
       <button type="submit" class="btn btn-primary" ng-click=orderByPlaceVariable="Tc">
-          <span class="glyphicon glyphicon-sort-by-alphabet"></span>
+        <span class="glyphicon glyphicon-sort-by-alphabet"></span>
         <i class="fa fa-angle-double-left" aria-hidden="true"></i> shortbySSN
 
       </button>
@@ -35,7 +34,7 @@
       <button id="KayitEkle" type="submit" ng-click="$ctrl.goEditt()" class="btn btn-primary">
         <span class="glyphicon glyphicon-plus"></span> add
       </button>
-      
+
     </div>
     <div class="panel-body" style="
   overflow: scroll;
@@ -47,31 +46,36 @@
             <table style="width: 100%" class="table table-bordred table-striped">
               <thead>
                 <tr>
-                  <th><a ng-click=orderByPlaceVariable="Id">  <span class="glyphicon glyphicon-sort-by-alphabet"></span> Id</a></th>
-                  <th><a ng-click=orderByPlaceVariable="Ad">  <span class="glyphicon glyphicon-sort-by-alphabet"></span> Name</a></th>
-                  <th><a ng-click=orderByPlaceVariable="Soyad">  <span class="glyphicon glyphicon-sort-by-alphabet"></span> Surname</a></th>
-                  <th><a ng-click=orderByPlaceVariable="Tc">  <span class="glyphicon glyphicon-sort-by-alphabet"></span> SSN</a></th>
+                  <th><a ng-click=orderByPlaceVariable="Id"> <span class="glyphicon glyphicon-sort-by-alphabet"></span>
+                      Id</a></th>
+                  <th><a ng-click=orderByPlaceVariable="Ad"> <span class="glyphicon glyphicon-sort-by-alphabet"></span>
+                      Name</a></th>
+                  <th><a ng-click=orderByPlaceVariable="Soyad"> <span
+                        class="glyphicon glyphicon-sort-by-alphabet"></span> Surname</a></th>
+                  <th><a ng-click=orderByPlaceVariable="Tc"> <span class="glyphicon glyphicon-sort-by-alphabet"></span>
+                      SSN</a></th>
                   <th></th>
                 </tr>
               </thead>
               <tbody>
-                <div class="liste" >
-                <tr id='liste'
-                  ng-repeat="ogrenci in $ctrl.ogrenciler | orderBy:orderByPlaceVariable:reverseSort| filter:$ctrl.query ">
-                  <td ">{{ogrenci.Id}}</td>
-                  <td id="x">{{ogrenci.Ad}}</td>
-                  <td id="y">{{ogrenci.Soyad}}</td>
-                  <td id="z">{{ogrenci.Tc}}</td>
-                  <td> <button type="submit" ng-click="$ctrl.goEdit(ogrenci.Id)" class="btn btn-warning btn-sm">
-                      <span class="glyphicon glyphicon-edit"></span> Edit
-                    </button>
+                <div class="liste">
+                  <tr id='liste'
+                    ng-repeat="ogrenci in $ctrl.ogrenciler | orderBy:orderByPlaceVariable:reverseSort| filter:$ctrl.query ">
+                    <td ">{{ogrenci.Id}}</td>
+                  <td id=" x">{{ogrenci.Ad}}</td>
+                    <td id="y">{{ogrenci.Soyad}}</td>
+                    <td id="z">{{ogrenci.Tc}}</td>
+                    <td> <button type="submit" ng-click="$ctrl.goEdit(ogrenci.Id)" class="btn btn-warning btn-sm">
+                        <span class="glyphicon glyphicon-edit"></span> Edit
+                      </button>
 
-                    <button id="sil" type="submit" ng-click="$ctrl.goDelete(ogrenci.Id)" class="btn btn-danger btn-sm">
-                      <span class="glyphicon glyphicon-trash"></span> Trash
-                    </button></td>
-                    
-                </tr>
-              </div>
+                      <button id="sil" type="submit" ng-click="$ctrl.goDelete(ogrenci.Id)"
+                        class="btn btn-danger btn-sm">
+                        <span class="glyphicon glyphicon-trash"></span> Trash
+                      </button></td>
+
+                  </tr>
+                </div>
               </tbody>
             </table>
 
@@ -82,4 +86,4 @@
     </div>
     <input type="hidden" id="karma-component-test" value="test successful">
   </div>
-</
+  </
