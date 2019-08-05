@@ -24,8 +24,7 @@
     <br />
     <label>
       Last name:
-      <input type="text" name="Soyad" ng-model="$ctrl.ogrenci.Soyad" ng-maxlength="10" ng-pattern="/^[a-zA-Z]*$/"
-        required>
+      <input type="text" name="Soyad" ng-model="$ctrl.ogrenci.Soyad" ng-maxlength="10" ng-pattern="/^[a-zA-Z]*$/" required>
       <div ng-messages="form.Soyad.$error" ng-show="form.Soyad.$touched" role="alert">
         <div ng-message="required">
           <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
@@ -59,7 +58,7 @@
 
       </button>
 
-      <button id='olustur' type="submit" ng-click="$ctrl.goAdd()" ng-disabled="!form.$valid" class="btn btn-primary">
+      <button id="olustur" type="submit" ng-click="$ctrl.goAdd()" ng-disabled="!form.$valid" class="btn btn-primary">
         <i class="fa fa-angle-double-left" aria-hidden="true"></i> Ekle
 
       </button>

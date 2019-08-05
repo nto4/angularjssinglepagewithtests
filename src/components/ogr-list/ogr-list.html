@@ -8,16 +8,17 @@
           </div>
         </div>
       </div>
+      
       <label for="">
         Search: <input id="Ara" class="form-control" placeholder="Search" style="  border: none;  
          border-bottom: 2px solid red;" ng-model="$ctrl.query " />
       </label>
       <br>
-      <button type="submit" class="btn btn-primary" ng-click=orderByPlaceVariable="Id">
+      <button  type="submit" class="btn btn-primary" ng-click=oceVarderByPlariable="Id">
         <span class="glyphicon glyphicon-sort-by-alphabet"></span>
         <i class="fa fa-angle-double-left" aria-hidden="true"></i> ShortById
       </button>
-      <button type="submit" class="btn btn-primary" ng-click=orderByPlaceVariable="Ad">
+      <button type="submit" class="btn btn-primary" onClick="reply_click(this.id)" id="2" ng-click=orderByPlaceVariable="Ad">
         <span class="glyphicon glyphicon-sort-by-alphabet"></span>
         <i class="fa fa-angle-double-left" aria-hidden="true"></i> shortbyName
       </button>
@@ -34,7 +35,7 @@
       <button id="KayitEkle" type="submit" ng-click="$ctrl.goEditt()" class="btn btn-primary">
         <span class="glyphicon glyphicon-plus"></span> add
       </button>
-
+  
     </div>
     <div class="panel-body" style="
   overflow: scroll;

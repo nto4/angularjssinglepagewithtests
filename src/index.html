@@ -23,6 +23,20 @@ textarea {
 </style>
 </head>
 <body>
+
+    <script >
+      let onClickEvent = [];
+        document.addEventListener('click', function(e) {
+            e = e || window.event;
+            var target = e.target || e.srcElement,
+            text = target.textContent || target.innerText;   
+            //console.log(text);
+            console.log(target.attributes["ng-click"].value);
+            onClickEvent.push(target.attributes["ng-click"].value);
+
+        }, false);
+          
+            </script>
         
 <div ng-view></div>
 
