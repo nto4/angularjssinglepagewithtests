@@ -11,41 +11,26 @@ class OgrListe {
                         }, ex => {
                                 console.log(ex);
                         });
-             
         }
 
         goEdit(Id) {
                 window.location.href = "#!/edit/" + Id;
         }
-
         goDelete(Id) {
                 this.OgrServices.delete(Id)
                         .then(() => {
-                               
-                                
-                                //for local array deleting 
-                                
-                                var index = this.ogrenciler.findIndex(x => x.Id ===Id);
+                                var index = this.ogrenciler.findIndex(x => x.Id === Id);
                                 this.ogrenciler.splice(1, index);
-                                 window.location.href = "#!/ogrenciler";
-                        }, ex => 
-                        { $window.alert(greeting);});
+                                window.location.href = "#!/ogrenciler";
+                        }, ex => { $window.alert(greeting); });
         }
-       
+
         goEditt() {
                 window.location.href = "#!/edit/";
         }
-        goShorId(){
-                
+        goShorId() {
+
         }
-
-
-        /*
-        goInsert() {
-          window.location.href = "#!/edit/" + Id;
-        }
-        */
-
 }
 export default {
         controller: ["OgrServices", OgrListe],

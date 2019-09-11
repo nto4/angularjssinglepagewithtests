@@ -11,10 +11,6 @@ describe('OgrServices', function () {
         { Id: '91', Ad: 'mehmet', Soyad: 'basaran', Tc: '01234567890' },
         { Id: '91', Ad: 'mehmet', Soyad: 'basaran', Tc: '01234567890' }
     ];
-    // console.log(Ogrenciler);
-    //console.log(Ogrenciler.length)
-    //debugger;
-
     beforeEach(function () {
         jasmine.addCustomEqualityTester(angular.equals);
     });
@@ -28,14 +24,11 @@ describe('OgrServices', function () {
     }));
 
     afterEach(function () {
-
         $httpBackend.verifyNoOutstandingExpectation();
         $httpBackend.verifyNoOutstandingRequest();
-
     });
 
     it('should fetch the person data from the database', function (done) {
-
         //debugger;
         $httpBackend
             .expectGET("http://localhost:1234/api/home/")
@@ -57,19 +50,10 @@ describe('OgrServices', function () {
 
                 return count;
             }
-
-            //var ogrencilerLength = countProperties(ogrenciler);
             expect(Ogrenciler.length).toEqual(2);
-            //console.log(ogrenciler.length);
-
-            //debugger;
             done();
-
         });
-
-
         $httpBackend.flush();
     });
-
 });
 

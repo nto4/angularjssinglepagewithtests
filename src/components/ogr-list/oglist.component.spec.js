@@ -7,35 +7,28 @@ describe('Ogr List html', () => {
     var $rootScope;
     var OgrServices;
     var $q;
-    //var ctrl;
     beforeEach(() => {
         jasmine.addCustomEqualityTester(angular.equals);
     });
-    //asdasd
     beforeEach(angular.mock.module('myApp'));
-    //console.log("test");
-    
-    beforeEach(angular.mock.inject((_$rootScope_, _$q_, _$compile_,_OgrServices_) => {
+    beforeEach(angular.mock.inject((_$rootScope_, _$q_, _$compile_, _OgrServices_) => {
         $compile = _$compile_;
         $rootScope = _$rootScope_;
         $q = _$q_;
-       // ctrl = $componentController('ogrList');
-        //console.log("test");
         OgrServices = _OgrServices_;
-      //  console.log(OgrServices);
         debugger;
-        spyOn(OgrServices, 'getAll').and.callFake(()=>{
-           return $q.when([{ Id: '91', Ad: 'mehmet', Soyad: 'basaran', Tc: '01234567890' }]);
+        spyOn(OgrServices, 'getAll').and.callFake(() => {
+            return $q.when([{ Id: '91', Ad: 'mehmet', Soyad: 'basaran', Tc: '01234567890' }]);
         });
     }));
-    
-    it('should replace the content with the ogr-list component', function() {       
+
+    it('should replace the content with the ogr-list component', function () {
         const element = $compile('<ogr-list></ogr-list>')($rootScope.$new());
         $rootScope.$digest();
         expect(element.html()).toContain('id="karma-component-test" value="test successful"');
         expect(OgrServices.getAll).toHaveBeenCalled();
     });
-   });
+});
 
 /*
 import "angular";
@@ -54,7 +47,7 @@ describe('Ogr List html', () => {
     //asdasd
     beforeEach(angular.mock.module('myApp'));
     //console.log("test");
-    
+
     beforeEach(angular.mock.inject((_$rootScope_, _$q_, _$compile_,_OgrServices_) => {
         $compile = _$compile_;
         $rootScope = _$rootScope_;
@@ -68,8 +61,8 @@ describe('Ogr List html', () => {
            return $q.when([{ Id: '91', Ad: 'mehmet', Soyad: 'basaran', Tc: '01234567890' }]);
         });
     }));
-    
-    it('should replace the content with the ogr-list component', function() {       
+
+    it('should replace the content with the ogr-list component', function() {
         const element = $compile('<ogr-list></ogr-list>')($rootScope.$new());
         $rootScope.$digest();
         expect(element.html()).toContain('id="karma-component-test" value="test successful"');
@@ -88,7 +81,7 @@ describe('Ogr List html', () => {
 
 
 
-   
+
 /*
 //duzenlenecek
 import "angular";
